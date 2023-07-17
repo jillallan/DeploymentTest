@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22158.8" systemVersion="22F82" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Step" representedClassName="CDStep" syncable="YES" codeGenerationType="class">
+        <attribute name="name" attributeType="String"/>
+        <attribute name="timestamp" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="trip" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trip" inverseName="steps" inverseEntity="Trip"/>
+    </entity>
+    <entity name="Trip" representedClassName="CDTrip" syncable="YES" codeGenerationType="class">
+        <attribute name="endDate" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="startDate" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="steps" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Step" inverseName="trip" inverseEntity="Step"/>
+    </entity>
+</model>
